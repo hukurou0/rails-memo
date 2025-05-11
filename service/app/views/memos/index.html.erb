@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>メモ一覧</h1>
+  <%= link_to "新規作成", new_memo_path, class: "btn btn-primary" %>
+</div>
+
+<div class="row">
+  <% @memos.each do |memo| %>
+    <div class="col-12 col-md-6 col-lg-4 memo-card">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= memo.title %></h5>
+          <p class="card-text text-muted">
+            作成日時: <%= l memo.created_at, format: :short %><br>
+            更新日時: <%= l memo.updated_at, format: :short %>
+          </p>
+          <%= link_to "詳細", memo_path(memo), class: "btn btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

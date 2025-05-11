@@ -1,0 +1,42 @@
+// Bootstrap
+@import "bootstrap";
+
+// Custom styles
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+// ナビゲーションバーのカスタマイズ
+.navbar {
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  
+  .navbar-brand {
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #3498db;
+    }
+  }
+}
+
+.memo-card {
+  margin-bottom: 1rem;
+}
+
+.memo-form {
+  textarea {
+    min-height: 200px;
+  }
+}
+
+.field_with_errors {
+  @extend .is-invalid;
+} 

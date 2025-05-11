@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1><%= @memo.title %></h1>
+  <div>
+    <%= link_to "戻る", root_path, class: "btn btn-outline-secondary" %>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="mb-3">
+      <%= simple_format @memo.body, class: "mb-0" %>
+    </div>
+    <div class="text-muted">
+      <small>
+        作成日時: <%= l @memo.created_at, format: :long %><br>
+        更新日時: <%= l @memo.updated_at, format: :long %>
+      </small>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-end gap-2">
+  <%= link_to "編集", edit_memo_path(@memo), class: "btn btn-primary" %>
+  <%= button_to "削除", memo_path(@memo), method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
+</div>
