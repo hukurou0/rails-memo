@@ -23,5 +23,11 @@ module Service
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # デフォルトの言語を日本語に設定
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.available_locales = [:ja]
+    config.i18n.enforce_available_locales = true
   end
 end
